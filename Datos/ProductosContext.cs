@@ -1,0 +1,13 @@
+using Entity;
+using Microsoft.EntityFrameworkCore;
+
+namespace Datos
+{
+    public class ProductosContext : DbContext
+    {
+        public ProductosContext(DbContextOptions options) : base(options)
+        {
+        }
+        public DbSet<Producto> Productos { get; set; }
+    }
+}
