@@ -75,7 +75,12 @@ namespace FarmaciaArias.Controllers
         [HttpPut("{codigoP}")]
         public ActionResult<string> Put(string codigoP, Producto producto)
         {
-            throw new NotImplementedException();
+            var id=_productoService.BuscarxIdentificacion(producto.CodigoP);
+            if(id==null){
+                return BadRequest("No encontrado");
+            }
+            var mensaje=_productoService.Modificar(producto);
+           return Ok(mensaje) ;
         }
     }
 }

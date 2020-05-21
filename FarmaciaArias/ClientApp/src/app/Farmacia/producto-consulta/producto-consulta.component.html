@@ -2,7 +2,7 @@
 <h2>Consulta De Productos</h2>
 </div>
 
-<div align='center'>
+  <div align='center'>
     <div class="col-6">
       <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar por nombre">
     </div>
@@ -23,6 +23,7 @@
         <th scope="col">LABORATORIO</th>
         <th scope="col">FECHA DE VENCIMIENTO</th>
         <th scope="col">CANTIDAD</th>
+        <th scope="col">EDITAR/ELIMINAR</th>
         
       </tr>
     </thead>
@@ -34,7 +35,7 @@
         <td>{{ producto.laboratorioP }}</td>
         <td>{{ producto.fechadevencimiento }}</td>
         <td>{{ producto.cantidadP }}</td>
-  
+        <td> <a routerLink='/productoEditar/{{producto.codigoP}}'> ver </a></td>
       </tr>
     </tbody>
   </table>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj": {}
+    "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj": {
+    "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj",
+        "projectPath": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\Datos.csproj",
         "packagesPath": "C:\\Users\\GARCIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\obj\\",
+        "outputPath": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GARCIA\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,8 +25,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj"
+              "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj": {
+    "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\GARCIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GARCIA\\Documents\\Ingenieria De Sistemas\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\GARCIA\\Documents\\INGENIERIA DE SISTEMAS\\PROGRMACION lV BAJO WEB\\FARMACIAARIASORM\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GARCIA\\AppData\\Roaming\\NuGet\\NuGet.Config"

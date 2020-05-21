@@ -17,13 +17,11 @@ namespace Logica
         {
             try
             {
-                
                 var productoAux = _context.Productos.Find(producto.CodigoP);
                 if (productoAux != null)
                 {
                     return new GuardarProductoResponse($"Error de la Aplicacion: El producto ya se encuentra registrado!");
-                }        
-              
+                }               
                 _context.Productos.Add(producto);
                 _context.SaveChanges();
                 return new GuardarProductoResponse(producto);
@@ -34,16 +32,14 @@ namespace Logica
             }
         }
         public List<Producto> ConsultarTodos()
-        {
-            
+        {         
             List<Producto> productos = _context.Productos.ToList();
             return productos;
         }
         public string Eliminar(string codigoP)
         {
             try
-            {
-                
+            {       
                 var producto = _context.Productos.Find(codigoP);
                 if (producto != null)
                 {
@@ -60,11 +56,30 @@ namespace Logica
 
                 return $"Error de la Aplicación: {e.Message}";
             }
+        }
+        public string Modificar(Producto productoNuevo)
+        {
+            try
+            {
+                var productoViejo = _context.Productos.Find(productoNuevo.CodigoP);
+                if (productoViejo != null)
+                {
+                    _context.Productos.Update(productoNuevo);
+                    return ($"El registro {productoNuevo.NombreP} se ha modificado satisfactoriamente.");
+                }
+                else
+                {
+                    return ($"Lo sentimos, {productoNuevo.CodigoP} no se encuentra registrado.");
+                }
+            }
+            catch (Exception e)
+            {
+                return $"Error de la Aplicación: {e.Message}";
+            }
 
         }
         public Producto BuscarxIdentificacion(string codigoP)
-        {
-            
+        {    
             Producto producto = _context.Productos.Find(codigoP);
             return producto;
         }

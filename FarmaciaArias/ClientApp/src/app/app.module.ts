@@ -18,6 +18,9 @@ import { ProductoEditarComponent } from './Farmacia/producto-editar/producto-edi
 import { AcercaDeComponent } from './Farmacia/acerca-de/acerca-de.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { VentaRegistroReactivoComponent } from './Farmacia/venta-registro-reactivo/venta-registro-reactivo.component';
+import { VentaConsultaComponent } from './Farmacia/venta-consulta/venta-consulta.component';
+import { ProductoConsultaModalComponent } from './@base/producto-consulta-modal/producto-consulta-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     ProductoRegistroReactivoComponent,
     ProductoEditarComponent,
     AcercaDeComponent,
-    AlertModalComponent
+    AlertModalComponent,
+    VentaRegistroReactivoComponent,
+    VentaConsultaComponent,
+    ProductoConsultaModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,7 +50,7 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     AppRoutingModule,
     NgbModule
   ],
-  entryComponents: [AlertModalComponent],
+  entryComponents: [AlertModalComponent, ProductoConsultaModalComponent, ProductoConsultaComponent],
   providers: [ProductoService],
   bootstrap: [AppComponent]
 })

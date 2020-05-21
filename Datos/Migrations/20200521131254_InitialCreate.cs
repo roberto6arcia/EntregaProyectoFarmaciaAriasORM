@@ -21,12 +21,32 @@ namespace Datos.Migrations
                 {
                     table.PrimaryKey("PK_Productos", x => x.CodigoP);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Ventas",
+                columns: table => new
+                {
+                    ProductoId = table.Column<string>(nullable: false),
+                    ProductoNombre = table.Column<string>(nullable: true),
+                    CodigoV = table.Column<string>(nullable: true),
+                    Fechadeventa = table.Column<DateTime>(nullable: false),
+                    PrecioV = table.Column<int>(nullable: false),
+                    CantidadV = table.Column<int>(nullable: false),
+                    TotalV = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ventas", x => x.ProductoId);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Productos");
+
+            migrationBuilder.DropTable(
+                name: "Ventas");
         }
     }
 }

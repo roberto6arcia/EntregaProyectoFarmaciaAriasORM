@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(ProductosContext))]
-    [Migration("20200507190043_InitialCreate")]
+    [Migration("20200521131254_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,34 @@ namespace Datos.Migrations
                     b.HasKey("CodigoP");
 
                     b.ToTable("Productos");
+                });
+
+            modelBuilder.Entity("Entity.Venta", b =>
+                {
+                    b.Property<string>("ProductoId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CantidadV")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CodigoV")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Fechadeventa")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PrecioV")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductoNombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalV")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductoId");
+
+                    b.ToTable("Ventas");
                 });
 #pragma warning restore 612, 618
         }
