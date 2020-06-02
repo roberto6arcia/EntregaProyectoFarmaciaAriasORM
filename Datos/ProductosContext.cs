@@ -10,5 +10,6 @@ namespace Datos
         }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
