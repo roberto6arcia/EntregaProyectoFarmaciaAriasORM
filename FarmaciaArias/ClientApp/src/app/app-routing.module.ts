@@ -12,13 +12,13 @@ import { VentaConsultaComponent } from './Farmacia/venta-consulta/venta-consulta
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  {path: 'productoConsulta', component: ProductoConsultaComponent},
+  {path: 'productoConsulta', component: ProductoConsultaComponent,  canActivate: [AuthGuard]},
   {path: 'productoRegistro',component: ProductoRegistroComponent},
   {path: 'productoRegistroreactivo',component: ProductoRegistroReactivoComponent,  canActivate: [AuthGuard]},
-  {path: 'productoEditar/:codigoP',component: ProductoEditarComponent},
+  {path: 'productoEditar/:codigoP',component: ProductoEditarComponent,  canActivate: [AuthGuard]},
   {path: 'acercaDeFarmacia',component: AcercaDeComponent},
   {path: 'ventaRegistroreactivo',component: VentaRegistroReactivoComponent,  canActivate: [AuthGuard]},
-  {path: 'ventaConsulta', component: VentaConsultaComponent},
+  {path: 'ventaConsulta', component: VentaConsultaComponent,  canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
 ];
 

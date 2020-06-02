@@ -9,9 +9,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using FarmaciaArias.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FarmaciaArias.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class VentaController: ControllerBase
