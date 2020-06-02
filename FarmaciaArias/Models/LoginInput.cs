@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FarmaciaArias.Models
 {
-    public class LoginModel
+    public class LoginInputModel
     {
         [Required]
         public string Username { get; set; }
@@ -17,5 +17,5 @@ namespace FarmaciaArias.Models
         public string LastName { get; set; }
         public string Username { get; set; }
         public string Token { get; set; }
-    }
+    }   
 }

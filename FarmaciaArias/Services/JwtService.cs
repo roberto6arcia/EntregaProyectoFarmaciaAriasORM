@@ -8,7 +8,7 @@ using System.Text;
 using FarmaciaArias.Config;
 using FarmaciaArias.Models;
 
-namespace FarmaciaArias.Services
+namespace FarmaciaArias
 {
     public class JwtService
     {
