@@ -21,6 +21,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { VentaRegistroReactivoComponent } from './Farmacia/venta-registro-reactivo/venta-registro-reactivo.component';
 import { VentaConsultaComponent } from './Farmacia/venta-consulta/venta-consulta.component';
 import { ProductoConsultaModalComponent } from './@base/producto-consulta-modal/producto-consulta-modal.component';
+import { JwtInterceptor } from './services/jwt-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,7 @@ import { ProductoConsultaModalComponent } from './@base/producto-consulta-modal/
     NgbModule
   ],
   entryComponents: [AlertModalComponent, ProductoConsultaModalComponent, ProductoConsultaComponent],
-  providers: [ProductoService],
+  providers: [ProductoService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

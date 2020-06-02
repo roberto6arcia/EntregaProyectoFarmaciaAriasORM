@@ -10,7 +10,7 @@
     </li>
 
     <!-- Dropdown -->
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown" [routerLinkActive]="['link-active']" *ngIf="currentUser">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Producto</a>
 
         <div class="dropdown-menu">
@@ -21,7 +21,7 @@
       </li>
 
       <!-- Dropdown -->
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown" [routerLinkActive]="['link-active']" *ngIf="currentUser">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Venta</a>
 
       <div class="dropdown-menu">
@@ -31,7 +31,7 @@
       </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="currentUser">
       <a class="nav-link" routerLink='/controldeventas'>Control de Seguridad</a>
     </li>
 
@@ -41,6 +41,13 @@
 
       <li class="nav-item">
       <button type="button" class="btn btn-outline-secondary" routerLink='/farmaciaLogin'>Iniciar sesion</button>
+      </li>
+
+      <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="currentUser">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="!currentUser">
+        <a class="nav-item nav-link" [routerLink]="['/login']">Login</a>
       </li>
 
   </ul>
