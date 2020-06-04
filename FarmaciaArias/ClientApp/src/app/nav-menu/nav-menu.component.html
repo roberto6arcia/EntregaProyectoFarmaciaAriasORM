@@ -31,8 +31,15 @@
       </div>
     </li>
 
-    <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="currentUser">
-      <a class="nav-link" routerLink='/controldeventas'>Control de Seguridad</a>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown" [routerLinkActive]="['link-active']" *ngIf="currentUser">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Control de Seguridad</a>
+
+      <div class="dropdown-menu">
+        
+        <a class="dropdown-item" routerLink='/userRegistroreactivo'>Registrar nuevo usuario</a>
+        <a class="dropdown-item" routerLink='/userConsulta'>Consultar usuarios</a>
+      </div>
     </li>
 
     <li class="nav-item">

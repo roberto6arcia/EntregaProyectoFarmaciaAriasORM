@@ -1,0 +1,67 @@
+<div class="signup-form">
+    <form method="post">
+    <div class="form-header">
+      <h2>Registro Usuario</h2>
+      <p>Completar cada campo</p>
+    </div>
+    
+    <form [formGroup]="formGroup">
+
+    <div class="form-group">
+        <label>UserName</label>
+          <input type="text" name="userName" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid':  control.userName.errors}" />
+          <div *ngIf="control.userName.errors"  class="invalid-feedback">
+          <div *ngIf="control.userName.errors.required">Se requiere el userName del usuario </div>
+          </div>
+        </div>
+
+    <div class="form-group">
+        <label>Password</label>
+           <input type="text" name="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':  control.password.errors}" />
+           <div *ngIf="control.password.errors"  class="invalid-feedback">
+           <div *ngIf="control.password.errors.required">Se requiere el password del usuario </div>
+           </div>
+        </div>
+        
+    <div class="form-group">
+        <label>FirstName</label>
+           <input type="text"name="firstName" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid':  control.firstName.errors}" />
+           <div *ngIf="control.firstName.errors"  class="invalid-feedback">
+           <div *ngIf="control.firstName.errors.required">Se requiere el firstName del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label>LastName</label>
+           <input type="text"name="lastName" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid':  control.lastName.errors}" />
+           <div *ngIf="control.lastName.errors"  class="invalid-feedback">
+           <div *ngIf="control.lastName.errors.required">Se requiere el lastName del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label>idUser</label>
+           <input type="text"name="idUser" formControlName="idUser" class="form-control" [ngClass]="{ 'is-invalid':  control.idUser.errors}" />
+           <div *ngIf="control.idUser.errors"  class="invalid-feedback">
+           <div *ngIf="control.idUser.errors.required">Se requiere el idUser del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label>Role</label>
+            <input type="text"name="role" formControlName="role" class="form-control" [ngClass]="{ 'is-invalid':  control.role.errors}" />
+            <div *ngIf="control.role.errors"  class="invalid-feedback">
+            <div *ngIf="control.role.errors.required">Se requiere el role del usuario </div>
+            </div>
+        </div>
+        
+    <div class="button">
+      <button type="button" class="btn btn-primary btn-block btn-lg" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar Usuario</button>
+      <button type="button" class="btn btn-primary btn-block btn-lg" type="reset">Limpiar Formulario</button>
+    </div>
+
+    </form>	
+    
+    </form>
+
+</div>

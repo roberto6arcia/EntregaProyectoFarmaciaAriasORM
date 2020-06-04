@@ -31,6 +31,8 @@ namespace Datos.Migrations
                     Estado = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
+                    IdUser = table.Column<string>(nullable: true),
+                    Role = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     MobilePhone = table.Column<string>(nullable: true)
                 },

@@ -22,6 +22,8 @@ import { VentaRegistroReactivoComponent } from './Farmacia/venta-registro-reacti
 import { VentaConsultaComponent } from './Farmacia/venta-consulta/venta-consulta.component';
 import { ProductoConsultaModalComponent } from './@base/producto-consulta-modal/producto-consulta-modal.component';
 import { JwtInterceptor } from './services/jwt-interceptor.service';
+import { UsuarioRegistroReactivoComponent } from './Farmacia/usuario-registro-reactivo/usuario-registro-reactivo.component';
+import { UsuarioConsultaComponent } from './Farmacia/usuario-consulta/usuario-consulta.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { JwtInterceptor } from './services/jwt-interceptor.service';
     AlertModalComponent,
     VentaRegistroReactivoComponent,
     VentaConsultaComponent,
-    ProductoConsultaModalComponent
+    ProductoConsultaModalComponent,
+    UsuarioRegistroReactivoComponent,
+    UsuarioConsultaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

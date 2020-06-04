@@ -11,6 +11,9 @@ import { VentaRegistroReactivoComponent } from './Farmacia/venta-registro-reacti
 import { VentaConsultaComponent } from './Farmacia/venta-consulta/venta-consulta.component';
 import { AuthGuard } from './services/auth.guard';
 
+import { UsuarioConsultaComponent } from './Farmacia/usuario-consulta/usuario-consulta.component';
+import { UsuarioRegistroReactivoComponent } from './Farmacia/usuario-registro-reactivo/usuario-registro-reactivo.component';
+
 const routes: Routes = [
   {path: 'productoConsulta', component: ProductoConsultaComponent,  canActivate: [AuthGuard]},
   {path: 'productoRegistro',component: ProductoRegistroComponent},
@@ -20,6 +23,8 @@ const routes: Routes = [
   {path: 'ventaRegistroreactivo',component: VentaRegistroReactivoComponent,  canActivate: [AuthGuard]},
   {path: 'ventaConsulta', component: VentaConsultaComponent,  canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
+  {path: 'userRegistroreactivo',component: UsuarioRegistroReactivoComponent,  canActivate: [AuthGuard]},
+  {path: 'userConsulta', component: UsuarioConsultaComponent,  canActivate: [AuthGuard]},
 ];
 
 @NgModule({

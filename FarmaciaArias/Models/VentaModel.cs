@@ -9,7 +9,7 @@ namespace FarmaciaArias.Models
 {
     public class VentaInputModel
     {
-        [Required(ErrorMessage="El Codigo del producto es requerido")]
+        [Required(ErrorMessage="El Id del producto es requerido")]
         public string ProductoId { get; set; }
         [Required]
         public string ProductoNombre { get; set; }
