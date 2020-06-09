@@ -23,6 +23,8 @@ namespace FarmaciaArias.Controllers
         {
             _userService = new UserService(context);
         }
+
+        [Authorize(Roles="Administrador")]
          // GET: api/User
         [HttpGet]
         public IEnumerable<UserViewModel> Gets()
@@ -31,6 +33,7 @@ namespace FarmaciaArias.Controllers
             return users;
         }
 
+        [Authorize(Roles="Administrador")]
         // GET: api/User/5
         [HttpGet("{idUser}")]
         public ActionResult<UserViewModel> Get(string idUser)
@@ -41,6 +44,7 @@ namespace FarmaciaArias.Controllers
             return userViewModel;
         }
         
+        [Authorize(Roles="Administrador")]
         // POST: api/User
         [HttpPost]
         public ActionResult<UserViewModel> Post(UserInputModel userInput)
@@ -54,6 +58,7 @@ namespace FarmaciaArias.Controllers
             return Ok(response.User);
         }
       
+        [Authorize(Roles="Administrador")]
         // DELETE: api/User/5
         [HttpDelete("{idUser}")]
         public ActionResult<string> Delete(string idUser)
@@ -61,19 +66,25 @@ namespace FarmaciaArias.Controllers
             string mensaje = _userService.Eliminar(idUser);
             return Ok(mensaje);
         }
+
         private User MapearUser(UserInputModel userInput)
         {
             var user = new User
             {
                 UserName = userInput.UserName,
                 Password = userInput.Password,
+                Estado = userInput.Estado,
                 FirstName = userInput.FirstName,
                 LastName = userInput.LastName,
                 IdUser = userInput.IdUser,
+                Email = userInput.Email,
+                MobilePhone = userInput.MobilePhone,
                 Role = userInput.Role,
             };
             return user;
         }
+
+        [Authorize(Roles="Administrador")]
         // PUT: api/User/5
         [HttpPut("{idUser}")]
         public ActionResult<string> Put(string idUser, User user)

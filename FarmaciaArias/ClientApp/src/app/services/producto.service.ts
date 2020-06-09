@@ -52,30 +52,31 @@ export class ProductoService {
         );
   }
 
-  put(producto: Producto): Observable<any> {
-    const url = `${this.baseUrl}api/producto/${producto.codigoP}`;
+  update(producto: Producto): Observable<any> {
+    const url = `${this.baseUrl}api/Producto/${producto.codigoP}`;
     return this.http.put(url, producto, httpOptions)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos enviados')),
-      catchError(this.handleErrorService.handleError<any>('Editar Producto'))
+      tap(_ => this.handleErrorService.log(`Actualizado producto id=${producto.codigoP}`)),
+      catchError(this.handleErrorService.handleError<any>('producto'))
     );
   }
 
   getId(id: string): Observable<Producto> {
-    const url = `${this.baseUrl + 'api/producto'}/${id}`;
+    const url = `${this.baseUrl + 'api/Producto'}/${id}`;
       return this.http.get<Producto>(url, httpOptions)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
-        catchError(this.handleErrorService.handleError<Producto>('Buscar Producto', null))
+        catchError(this.handleErrorService.handleError<Producto>(`getProducto id=${id}`))
       );
   }
 
-  delete(producto: Producto| string): Observable<string> {
+  delete(producto: Producto| string): Observable<Producto> {
     const id = typeof producto === 'string' ? producto : producto.codigoP;
-    return this.http.delete<string>(this.baseUrl + 'api/producto/'+ id)
+    const url = `${this.baseUrl +'api/Producto'}/${id}`;
+    return this.http.delete<Producto>(url, httpOptions)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos enviados')),
-      catchError(this.handleErrorService.handleError<string>('Elimiar Producto', null))
+      tap(_ => this.handleErrorService.log(`Producto eliminado id=${id}`)),
+      catchError(this.handleErrorService.handleError<Producto>('Producto Eliminado', null))
     );
   }
 }

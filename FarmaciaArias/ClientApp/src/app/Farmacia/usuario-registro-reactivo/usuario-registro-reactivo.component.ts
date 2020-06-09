@@ -25,17 +25,23 @@ export class UsuarioRegistroReactivoComponent implements OnInit {
     this.user = new User();
     this.user.userName = '';
     this.user.password = '';
+    this.user.estado = '';
     this.user.firstName = '';
     this.user.lastName = '';
     this.user.idUser = '';
+    this.user.email = '';
+    this.user.mobilePhone = '';
     this.user.role = '';
     
     this.formGroup = this.formBuilder.group({
       userName: [this.user.userName, Validators.required],
       password: [this.user.password, Validators.required],
+      estado: [this.user.estado, Validators.required],
       firstName: [this.user.firstName, Validators.required],
       lastName: [this.user.lastName, Validators.required],
       idUser: [this.user.idUser, Validators.required],
+      email: [this.user.email, Validators.required],
+      mobilePhone: [this.user.mobilePhone, Validators.required],
       role: [this.user.role, Validators.required ]
 
     });

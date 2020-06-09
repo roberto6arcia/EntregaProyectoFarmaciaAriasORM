@@ -7,6 +7,9 @@ using Microsoft.Extensions.Options;
 using FarmaciaArias.Config;
 using FarmaciaArias.Models;
 
+using System.Linq;
+using System.Collections.Generic;
+
 namespace FarmaciaArias.Controllers
 {
     [Authorize]
@@ -20,18 +23,21 @@ namespace FarmaciaArias.Controllers
         public LoginController(ProductosContext context, IOptions<AppSetting> appSettings)
         {
             _context = context;
-            var admin = _context.Users.Find("admin");
+            //var admin = _context.Users.Find("admin");
+            var admin = _context.Users.FirstOrDefault(x => x.UserName == "admin");
             if (admin == null) 
             {
                 _context.Users.Add(new User() 
                 { 
+                    //UserId = 1,
                     UserName="admin", 
                     Password="admin", 
-                    Email="admin@gmail.com", 
                     Estado="AC", 
                     FirstName="Adminitrador", 
-                    LastName="", 
-                    MobilePhone="31800000000"}
+                    LastName="Adminitrador",
+                    Email="admin@gmail.com",
+                    MobilePhone="31800000000",
+                    Role="Administrador"}
                 );
                 var registrosGuardados=_context.SaveChanges();
             }
@@ -43,8 +49,8 @@ namespace FarmaciaArias.Controllers
         [HttpPost]
         public IActionResult Login(LoginInputModel model)
         {
-            var user = _userService.Validate(model.Username, model.Password);
-            if (user == null) return BadRequest("Username or password is incorrect");
+            var user = _userService.Validate(model.UserName, model.Password);
+            if (user == null) return BadRequest("UserName or password is incorrect");
             var response= _jwtService.GenerateToken(user);
             return Ok(response);
         }

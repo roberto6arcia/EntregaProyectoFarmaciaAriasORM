@@ -32,9 +32,9 @@ namespace Datos.Migrations
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     IdUser = table.Column<string>(nullable: true),
-                    Role = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    MobilePhone = table.Column<string>(nullable: true)
+                    MobilePhone = table.Column<string>(nullable: true),
+                    Role = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

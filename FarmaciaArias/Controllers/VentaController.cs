@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using FarmaciaArias.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
+
+using System.Net;
 
 namespace FarmaciaArias.Controllers
 {
@@ -23,6 +26,8 @@ namespace FarmaciaArias.Controllers
         {
             _ventaService = new VentaService(context);
         }
+
+        [Authorize(Roles="Administrador,Vendedor")]
          // GET: api/Venta
         [HttpGet]
         public IEnumerable<VentaViewModel> Gets()
@@ -31,6 +36,7 @@ namespace FarmaciaArias.Controllers
             return ventas;
         }
 
+        [Authorize(Roles="Administrador,Vendedor")]
         // GET: api/Venta/5
         [HttpGet("{codigoV}")]
         public ActionResult<VentaViewModel> Get(string codigoV)
@@ -41,6 +47,7 @@ namespace FarmaciaArias.Controllers
             return ventaViewModel;
         }
         
+        [Authorize(Roles="Administrador,Vendedor")]
         // POST: api/Venta
         [HttpPost]
         public ActionResult<VentaViewModel> Post(VentaInputModel ventaInput)
@@ -53,7 +60,8 @@ namespace FarmaciaArias.Controllers
             }
             return Ok(response.Venta);
         }
-      
+
+        [Authorize(Roles="Administrador,Vendedor")]
         // DELETE: api/Venta/5
         [HttpDelete("{codigoV}")]
         public ActionResult<string> Delete(string codigoV)
@@ -61,6 +69,7 @@ namespace FarmaciaArias.Controllers
             string mensaje = _ventaService.Eliminar(codigoV);
             return Ok(mensaje);
         }
+
         private Venta MapearVenta(VentaInputModel ventaInput)
         {
             var venta = new Venta
@@ -75,6 +84,8 @@ namespace FarmaciaArias.Controllers
             };
             return venta;
         }
+
+        [Authorize(Roles="Administrador,Vendedor")]
         // PUT: api/Venta/5
         [HttpPut("{codigoV}")]
         public ActionResult<string> Put(string codigoV, Venta venta)
